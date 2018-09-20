@@ -6,7 +6,6 @@ import pawelsmolarski95.gmail.com.tablefootball.infrastructure.injection.PerActi
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.injection.components.ActivityComponent
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.injection.components.ApplicationComponent
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.injection.modules.ActivityModule
-import pawelsmolarski95.gmail.com.tablefootball.infrastructure.injection.modules.ViewModelFactoryModule
 
 @PerActivity
 @Component(dependencies = [ApplicationComponent::class],

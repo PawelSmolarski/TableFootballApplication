@@ -28,11 +28,11 @@ abstract class BaseFragment : Fragment() {
         initializeInjector()
         retainInstance = true
 
-        try {
-            isInjected = onInjectView()
+        isInjected = try {
+            onInjectView()
         } catch (e: IllegalStateException) {
             Log.e("Injection Error", e.message)
-            isInjected = false
+            false
         }
 
         prepareBaseViewModels()
