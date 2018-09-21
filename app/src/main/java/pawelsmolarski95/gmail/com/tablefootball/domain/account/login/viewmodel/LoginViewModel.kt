@@ -11,6 +11,6 @@ class LoginViewModel @Inject constructor(private val loginValidator: LoginValida
         if (loginValidator.validate(username, password))
             loginEvent.call()
         else
-            errorLiveData.value = "ERROR APPEARED"
+            errorLiveData.value = "Username or password should not be empty"
     }
 }

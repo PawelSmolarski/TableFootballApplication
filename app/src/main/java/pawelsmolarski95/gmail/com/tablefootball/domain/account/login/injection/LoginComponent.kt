@@ -9,8 +9,9 @@ import pawelsmolarski95.gmail.com.tablefootball.infrastructure.injection.modules
 
 @PerActivity
 @Component(dependencies = [ApplicationComponent::class],
-        modules = [LoginModule::class,
-            ActivityModule::class])
+        modules = [LoginViewModelsModule::class,
+            ActivityModule::class,
+            LoginModule::class])
 interface LoginComponent : ActivityComponent {
     fun inject(loginActivity: LoginActivity)
 }
