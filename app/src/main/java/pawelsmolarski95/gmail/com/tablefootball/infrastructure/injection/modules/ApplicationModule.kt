@@ -8,7 +8,7 @@ import pawelsmolarski95.gmail.com.tablefootball.infrastructure.base.AndroidAppli
 import javax.inject.Singleton
 
 @Module
-class ApplicationModule(val application: AndroidApplication) {
+class ApplicationModule(private val application: AndroidApplication) {
     @Provides
     @Singleton
     fun provideApplicationContext(): Context {

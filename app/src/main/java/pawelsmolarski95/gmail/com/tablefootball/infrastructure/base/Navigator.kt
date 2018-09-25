@@ -13,7 +13,7 @@ enum class Navigator {
     INSTANCE;
 
     private val fragmentBackStack: Stack<Fragment> = Stack()
-    private val HOME_FRAGMENT_TAG: String = "homeFragment"
+    private val homeFragmentTag: String = "homeFragment"
     private var homeFragment: Fragment? = null
     private var currentFragment: Fragment? = null
     private var frameLayoutId: Int = 0
@@ -48,7 +48,7 @@ enum class Navigator {
     private fun initializeView(homeFragment: Fragment, frameLayout: FrameLayout, activity: AppCompatActivity) {
         val fragmentTransaction: FragmentTransaction = activity.supportFragmentManager.beginTransaction()
         frameLayout.removeAllViews()
-        fragmentTransaction.add(frameLayout.id, homeFragment, HOME_FRAGMENT_TAG)
+        fragmentTransaction.add(frameLayout.id, homeFragment, homeFragmentTag)
         fragmentTransaction.commit()
 
         this.homeFragment = homeFragment
@@ -59,7 +59,7 @@ enum class Navigator {
 
     private fun restoreView(activity: AppCompatActivity, frameLayout: FrameLayout) {
         val fragmentTransaction: FragmentTransaction = activity.supportFragmentManager.beginTransaction()
-        fragmentTransaction.add(frameLayout.id, this.homeFragment, HOME_FRAGMENT_TAG)
+        fragmentTransaction.add(frameLayout.id, this.homeFragment, homeFragmentTag)
         fragmentTransaction.commit()
     }
 

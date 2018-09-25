@@ -7,8 +7,10 @@ import pawelsmolarski95.gmail.com.tablefootball.R
 import pawelsmolarski95.gmail.com.tablefootball.domain.account.login.injection.DaggerLoginComponent
 import pawelsmolarski95.gmail.com.tablefootball.domain.account.login.injection.LoginComponent
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.widget.Toast
 import pawelsmolarski95.gmail.com.tablefootball.domain.account.login.viewmodel.LoginViewModel
+import pawelsmolarski95.gmail.com.tablefootball.domain.account.register.view.RegisterActivity
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.base.BaseActivity
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.base.BaseViewModel
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.injection.HasComponent
@@ -16,7 +18,8 @@ import pawelsmolarski95.gmail.com.tablefootball.infrastructure.reactive.ViewMode
 import javax.inject.Inject
 
 class LoginActivity : BaseActivity(), HasComponent<LoginComponent> {
-    @Inject lateinit var viewModelFactory: ViewModelFactory
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
     private lateinit var loginComponent: LoginComponent
     private lateinit var loginViewModel: LoginViewModel
 
@@ -38,6 +41,10 @@ class LoginActivity : BaseActivity(), HasComponent<LoginComponent> {
     private fun prepareListeners() {
         btnLogin.setOnClickListener {
             loginViewModel.onClickLogin(tietUserName.text.toString(), tietPassword.text.toString())
+        }
+        btnRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 

@@ -6,7 +6,7 @@ import dagger.Provides
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.injection.PerActivity
 
 @Module
-class ActivityModule(val activity: Activity) {
+class ActivityModule(private val activity: Activity) {
     @Provides
     @PerActivity
     fun activity(): Activity {

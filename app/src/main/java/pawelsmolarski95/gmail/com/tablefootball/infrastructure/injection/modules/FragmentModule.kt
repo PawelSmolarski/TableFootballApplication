@@ -6,7 +6,7 @@ import dagger.Provides
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.injection.PerFragment
 
 @Module
-class FragmentModule(val fragment: Fragment) {
+class FragmentModule(private val fragment: Fragment) {
     @Provides
     @PerFragment
     fun fragment(): Fragment {

@@ -1,4 +1,4 @@
-package pawelsmolarski95.gmail.com.tablefootball.domain.account.login.service
+package pawelsmolarski95.gmail.com.tablefootball.domain.account.service
 
 import pawelsmolarski95.gmail.com.tablefootball.domain.account.login.viewmodel.Account
 import pawelsmolarski95.gmail.com.tablefootball.domain.account.login.viewmodel.Token

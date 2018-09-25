@@ -43,11 +43,10 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:1.1.1"
     testImplementation 'android.arch.core:core-testing:1.1.1'
 
-    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.22.0'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.22.0'
 
-    compile "com.squareup.retrofit2:retrofit:2.4.0"
-    compile "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
-    compile "com.squareup.retrofit2:converter-gson:2.4.0"
-    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.2.2'
-
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+    implementation group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.2.2'
 }

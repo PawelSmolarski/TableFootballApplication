@@ -1,7 +1,7 @@
 package pawelsmolarski95.gmail.com.tablefootball.domain.account.login.viewmodel
 
 import android.util.Log
-import pawelsmolarski95.gmail.com.tablefootball.domain.account.login.service.AccountService
+import pawelsmolarski95.gmail.com.tablefootball.domain.account.service.AccountService
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.base.BaseViewModel
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.reactive.SingleLiveEvent
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.web.TableFootballServiceBuilder
@@ -21,13 +21,16 @@ class LoginViewModel @Inject constructor(private val loginValidator: LoginValida
     }
 
     private fun loginRequest(username: String, password: String) {
-        TableFootballServiceBuilder.create(AccountService::class).login(Account(name = username, password = password)).enqueue(object : Callback<Token> {
+        val call = TableFootballServiceBuilder.create(AccountService::class).login(Account(username, password))
+        Log.i("CALL:", call.toString() + " " + call.request().url())
+
+        call.enqueue(object : Callback<Token> {
             override fun onFailure(call: Call<Token>, t: Throwable) {
-                Log.d("Request", "OnFailure ${t.message}")
+                Log.i("Request", "OnFailure ${t.message}")
             }
 
             override fun onResponse(call: Call<Token>, response: Response<Token>) {
-                Log.d("Request", "OnResponse ${response.body()?.toString()}")
+                Log.i("Request", "OnResponse ${response.body()?.toString()}")
             }
         })
     }
