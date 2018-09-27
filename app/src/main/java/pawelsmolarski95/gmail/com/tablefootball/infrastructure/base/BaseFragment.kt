@@ -34,7 +34,11 @@ abstract class BaseFragment : Fragment() {
             Log.e("Injection Error", e.message)
             false
         }
+    }
 
+    @CallSuper
+    override fun onAttachFragment(childFragment: Fragment?) {
+        super.onAttachFragment(childFragment)
         prepareBaseViewModels()
     }
 

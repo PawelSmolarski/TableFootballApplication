@@ -23,14 +23,17 @@ class LoginViewModel @Inject constructor(private val loginValidator: LoginValida
     private fun loginRequest(username: String, password: String) {
         val call = TableFootballServiceBuilder.create(AccountService::class).login(Account(username, password))
         Log.i("CALL:", call.toString() + " " + call.request().url())
+        loadingLiveData.value = true
 
         call.enqueue(object : Callback<Token> {
             override fun onFailure(call: Call<Token>, t: Throwable) {
                 Log.i("Request", "OnFailure ${t.message}")
+                loadingLiveData.value = false
             }
 
             override fun onResponse(call: Call<Token>, response: Response<Token>) {
                 Log.i("Request", "OnResponse ${response.body()?.toString()}")
+                loadingLiveData.value = false
             }
         })
     }

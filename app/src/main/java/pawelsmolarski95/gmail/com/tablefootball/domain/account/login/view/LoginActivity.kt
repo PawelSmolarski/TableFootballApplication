@@ -24,11 +24,11 @@ class LoginActivity : BaseActivity(), HasComponent<LoginComponent> {
     private lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         this.initializeInjector()
         prepareListeners()
         prepareViewModels()
-        super.onCreate(savedInstanceState)
     }
 
     private fun prepareViewModels() {
