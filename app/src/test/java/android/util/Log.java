@@ -1,5 +1,6 @@
 package android.util;
 
+@SuppressWarnings({"unused", "SameReturnValue", "WeakerAccess"})
 public final class Log {
     public static int d(String tag, String msg) {
         System.out.println("DEBUG: " + tag + ": " + msg);

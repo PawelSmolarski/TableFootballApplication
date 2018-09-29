@@ -11,7 +11,7 @@ class TableFootballServiceBuilder {
     companion object {
         private const val baseUrl: String = "http://192.168.1.22:8080/"
         private val baseOkHttpClient = OkHttpClient()
-        private var token: String = ""
+        var token: String = ""
 
         private fun createOkHttpClient(): OkHttpClient {
             val okHttpBuilder = baseOkHttpClient

@@ -38,7 +38,7 @@ class RegisterActivity : BaseActivity(), HasComponent<RegisterComponent> {
 
     private fun prepareListeners() {
         btnRegister.setOnClickListener {
-            registerViewModel.onClickRegister(tietUserName.text.toString(), tietPassword.text.toString(), tietPasswordConfirmation.text.toString())
+            registerViewModel.onClickRegister(tietUserName.text.toString(), tietPassword.text.toString(), tietPasswordConfirmation.text.toString(), chkAgreements.isChecked)
         }
     }
 
