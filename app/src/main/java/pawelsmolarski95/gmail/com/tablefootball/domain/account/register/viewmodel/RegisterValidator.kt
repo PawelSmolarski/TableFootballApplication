@@ -17,8 +17,7 @@ class RegisterValidator {
     }
 
     private fun validatePassword(password: String, confirmedPassword: String): Boolean {
-        return !(!password.isEmpty() && !confirmedPassword.isEmpty() && password != confirmedPassword)
-
+        return !(password.isBlank() || confirmedPassword.isBlank() || (password != confirmedPassword))
     }
 
     private fun validateUsername(username: String): Boolean {

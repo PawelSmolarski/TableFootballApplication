@@ -44,6 +44,8 @@ dependencies {
     testImplementation 'android.arch.core:core-testing:1.1.1'
 
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.22.0'
+    testCompile group: 'com.squareup.okhttp3', name: 'mockwebserver', version: '3.11.0'
+    implementation 'com.squareup.retrofit2:retrofit-mock:2.4.0'
 
     implementation "com.squareup.retrofit2:retrofit:2.4.0"
     implementation "com.squareup.retrofit2:converter-gson:2.4.0"
