@@ -9,7 +9,7 @@ import kotlin.reflect.KClass
 
 class TableFootballServiceBuilder {
     companion object {
-        private const val baseUrl: String = "http://192.168.1.22:8080/"
+        private const val baseUrl: String = "http://192.168.175.220:8080/"
         private val baseOkHttpClient = OkHttpClient()
         var token: String = ""
 

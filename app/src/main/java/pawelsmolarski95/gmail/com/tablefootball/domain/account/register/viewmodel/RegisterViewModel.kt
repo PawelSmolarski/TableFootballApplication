@@ -29,13 +29,12 @@ class RegisterViewModel @Inject constructor(private val registerValidator: Regis
                 .subscribeWith(
                         object : DisposableSingleObserver<Account>() {
                             override fun onSuccess(a: Account) {
-                                Log.i("Request", "OnResponse $a")
                                 loadingLiveData.value = false
                                 registerEvent.call()
                             }
 
                             override fun onError(e: Throwable) {
-                                Log.i("Request", "OnFailure ${e.message}")
+                                Log.w("Request", "OnFailure ${e.message}")
                                 loadingLiveData.value = false
                                 errorLiveData.value = "Try again"
                             }

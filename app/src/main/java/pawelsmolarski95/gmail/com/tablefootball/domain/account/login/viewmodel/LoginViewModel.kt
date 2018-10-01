@@ -29,14 +29,13 @@ class LoginViewModel @Inject constructor(private val loginValidator: LoginValida
                 .subscribeWith(
                         object : DisposableSingleObserver<Token>() {
                             override fun onSuccess(t: Token) {
-                                Log.i("Request", "OnResponse $t")
                                 loadingLiveData.value = false
                                 TableFootballServiceBuilder.token = t.token
                                 loginEvent.call()
                             }
 
                             override fun onError(e: Throwable) {
-                                Log.i("Request", "OnFailure ${e.message}")
+                                Log.w("Request", "OnFailure ${e.message}")
                                 loadingLiveData.value = false
                                 errorLiveData.value = "Try again"
                             }

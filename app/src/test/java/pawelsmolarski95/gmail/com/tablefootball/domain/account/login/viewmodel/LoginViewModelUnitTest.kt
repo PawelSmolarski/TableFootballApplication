@@ -11,7 +11,6 @@ import pawelsmolarski95.gmail.com.tablefootball.domain.account.service.AccountSe
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.web.TestServiceBuilder
 import util.BaseTest
 
-
 @RunWith(MockitoJUnitRunner::class)
 class LoginViewModelUnitTest : BaseTest() {
     @Spy
@@ -49,7 +48,7 @@ class LoginViewModelUnitTest : BaseTest() {
     fun `when user provides appropriate data login would happen`() {
         var hasChanged = false
         loginViewModel.loginEvent.observe({ lifecycle }, { hasChanged = true })
-        loginViewModel.onClickLogin("user" , "pass")
+        loginViewModel.onClickLogin("user", "pass")
         assertTrue(hasChanged)
     }
 

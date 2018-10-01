@@ -9,13 +9,13 @@ import pawelsmolarski95.gmail.com.tablefootball.R
 import pawelsmolarski95.gmail.com.tablefootball.domain.account.register.injection.DaggerRegisterComponent
 import pawelsmolarski95.gmail.com.tablefootball.domain.account.register.injection.RegisterComponent
 import pawelsmolarski95.gmail.com.tablefootball.domain.account.register.viewmodel.RegisterViewModel
-import pawelsmolarski95.gmail.com.tablefootball.infrastructure.base.BaseActivity
+import pawelsmolarski95.gmail.com.tablefootball.infrastructure.base.BaseViewActivity
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.base.BaseViewModel
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.injection.HasComponent
 import pawelsmolarski95.gmail.com.tablefootball.infrastructure.reactive.ViewModelFactory
 import javax.inject.Inject
 
-class RegisterActivity : BaseActivity(), HasComponent<RegisterComponent> {
+class RegisterActivity : BaseViewActivity(), HasComponent<RegisterComponent> {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     private lateinit var registerComponent: RegisterComponent
@@ -32,7 +32,8 @@ class RegisterActivity : BaseActivity(), HasComponent<RegisterComponent> {
     private fun prepareViewModels() {
         registerViewModel = ViewModelProviders.of(this, viewModelFactory).get(RegisterViewModel::class.java)
         registerViewModel.registerEvent.observe(this, Observer {
-            Toast.makeText(this, "REGISTER", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Register succeed", Toast.LENGTH_SHORT).show()
+            finish()
         })
     }
 

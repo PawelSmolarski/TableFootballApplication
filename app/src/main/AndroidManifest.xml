@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".domain.account.register.view.RegisterActivity" />
+        <activity android:name=".domain.games.info.view.InfoActivity" />
 
     </application>
 </manifest>
